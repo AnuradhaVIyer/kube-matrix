@@ -26,8 +26,9 @@ aws dynamodb create-table \
   --key-schema AttributeName=LockID,KeyType=HASH \
   --billing-mode PAY_PER_REQUEST
 
+5. Make changes in the environment variable(envs/tfvars files) to point to the correct credentials.
 
-VPC module for Kube Matrix (km).
+This is VPC module for Kube Matrix (km).
 
 Creates:
 - VPC with provided CIDR
@@ -39,3 +40,4 @@ Creates:
 Naming & tags follow project conventions in AWS Infrastructure Standards Guide.
 
 Make changes to the tfvars files to input your personal credentials
+
