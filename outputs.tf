@@ -62,3 +62,52 @@ output "ecr_database_policy_arn" {
   value = module.ecr_database.ecr_policy_arn
 }
 
+
+# ===== DATABASE OUTPUTS =====
+output "db_endpoint" {
+  value       = module.database.cluster_endpoint
+  description = "Aurora database endpoint"
+}
+
+output "db_reader_endpoint" {
+  value       = module.database.reader_endpoint
+  description = "Aurora reader endpoint"
+}
+
+output "db_sg_id" {
+  value       = module.database.security_group_id
+  description = "Database security group ID"
+}
+
+output "db_username_param" {
+  value       = module.database.username_parameter
+  description = "SSM parameter for DB username"
+}
+
+output "db_password_param" {
+  value       = module.database.password_parameter
+  description = "SSM parameter for DB password"
+}
+
+# ===== EKS OUTPUTS =====
+output "eks_cluster_name" {
+  value       = module.eks.cluster_name
+  description = "EKS cluster name"
+}
+
+output "eks_endpoint" {
+  value       = module.eks.cluster_endpoint
+  description = "EKS cluster endpoint"
+}
+
+output "eks_ca" {
+  value       = module.eks.cluster_ca
+  sensitive   = true
+  description = "EKS CA certificate"
+}
+
+output "kubeconfig_command" {
+  value       = module.eks.kubeconfig_command
+  description = "Command to update kubeconfig"
+}
+
